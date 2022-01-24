@@ -1,0 +1,30 @@
+{
+    "name": "greezlu/ws-logger",
+    "description": "Logger",
+    "type": "project",
+    "license": "MIT",
+    "homepage": "https://github.com/greezlu/ws-logger",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "greezlu",
+            "email": "greezlu@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "~7.4.0"
+    },
+    "keywords": [
+        "php",
+        "logger",
+        "php-logger",
+        "file",
+        "text"
+    ],
+    "autoload": {
+        "psr-4": {
+            "WebServer\\Core\\": "src/Core",
+            "WebServer\\Interfaces\\": "src/Interfaces"
+        }
+    }
+}
