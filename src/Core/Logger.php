@@ -6,6 +6,7 @@ declare(strict_types = 1);
 namespace WebServer\Core;
 
 use WebServer\Interfaces\LoggerInterface;
+use Exception;
 
 /**
  * @package greezlu/ws-logger
@@ -62,7 +63,7 @@ class Logger implements LoggerInterface
 
         try {
             set_error_handler(function() {
-                throw new \Exception();
+                throw new Exception();
             });
 
             if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
@@ -72,9 +73,9 @@ class Logger implements LoggerInterface
             }
 
             if (!$this->fileDescriptor) {
-                throw new \Exception();
+                throw new Exception();
             }
-        } catch (\Exception $error) {
+        } catch (Exception $error) {
             return;
         } finally {
             restore_error_handler();
